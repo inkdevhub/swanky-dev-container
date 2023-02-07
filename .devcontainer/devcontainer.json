@@ -1,0 +1,44 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+  "name": "Swanky-env",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "build": { "dockerfile": "Dockerfile" },
+
+  // Features to add to the dev container. More info: https://containers.dev/features.
+  "features": {
+    "ghcr.io/devcontainers/features/rust:1": {},
+    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
+      "packages": "binaryen,pkg-config,libssl-dev"
+    }
+  },
+
+  //TODO: creating and mounting this folder for now serves only for transferring git credentials
+  // it can probably be done in a more efficient way
+  // if no other use is found for this mount, it should be removed
+  "initializeCommand": ".devcontainer/scripts/create-swanky-shared.sh ${localEnv:HOME}${localEnv:USERPROFILE}/swanky",
+
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/swanky,target=/host-home,type=bind,consistency=cached"
+  ],
+
+  // Use 'forwardPorts' to make a list of ports inside the container available locally.
+  // "forwardPorts": [],
+
+  // Use 'postCreateCommand' to run commands after the container is created.
+  "postCreateCommand": "bash /tmp/swanky-setup.sh",
+  // "overrideCommand": true,
+  // Configure tool-specific properties.
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dtsvet.vscode-wasm",
+        "redhat.vscode-yaml"
+      ]
+    }
+  }
+
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
+}
