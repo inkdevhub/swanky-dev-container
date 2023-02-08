@@ -5,6 +5,10 @@
   // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
   "build": { "dockerfile": "Dockerfile" },
 
+  // Mount the workspace volume
+  "workspaceMount": "source=swanky-workspace-volume,target=/workspace,type=volume",
+  "workspaceFolder": "/workspace",
+
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/devcontainers/features/rust:1": {},
@@ -13,7 +17,6 @@
     }
   },
 
-  //TODO: creating and mounting this folder for now serves only for transferring git credentials
   // it can probably be done in a more efficient way
   // if no other use is found for this mount, it should be removed
   "initializeCommand": ".devcontainer/scripts/create-swanky-shared.sh ${localEnv:HOME}${localEnv:USERPROFILE}/swanky",
