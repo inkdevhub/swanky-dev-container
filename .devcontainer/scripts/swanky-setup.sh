@@ -30,4 +30,4 @@ if [ ! -L "$link_path" ]; then
   sudo ln -s "$swanky_bin_path" "$link_path"
 fi
 
-sudo chown node /workspace
+sudo chown vscode /workspace
