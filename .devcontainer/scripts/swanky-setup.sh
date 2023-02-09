@@ -20,7 +20,7 @@ cargo install --force --locked cargo-contract
 swanky_folder="/opt/swanky"
 
 if [ ! -d "$swanky_folder" ]; then
-  wget -O /tmp/swanky.tar.gz https://github.com/AstarNetwork/swanky-cli/releases/download/v1.0.10/swanky-v1.0.10-48b015c-linux-x64.tar.gz && sudo tar -xf /tmp/swanky.tar.gz -C /opt
+  wget -O /tmp/swanky.tar.gz https://github.com/AstarNetwork/swanky-cli/releases/download/v1.0.11/swanky-v1.0.11-103b620-linux-x64.tar.gz && sudo tar -xf /tmp/swanky.tar.gz -C /opt
 fi
 
 link_path="/usr/local/bin/swanky"
@@ -31,3 +31,5 @@ if [ ! -L "$link_path" ]; then
 fi
 
 sudo chown vscode /workspace
+
+npm i -g serve
