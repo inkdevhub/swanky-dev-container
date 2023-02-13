@@ -89,6 +89,6 @@ To add a feature, simply copy it's reference int the `features` field.
 
 ## References
 
-- (Dev containers manual)[https://code.visualstudio.com/docs/devcontainers/containers]
-- (Dev container specification)[https://containers.dev/]
-- (swanky-cli)[https://github.com/AstarNetwork/swanky-cli]
+- [Dev containers manual](https://code.visualstudio.com/docs/devcontainers/containers)
+- [Dev container specification](https://containers.dev/)
+- [swanky-cli](https://github.com/AstarNetwork/swanky-cli)
