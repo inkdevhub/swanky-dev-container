@@ -21,15 +21,30 @@ More detailed information on system requirements can be [found here](https://cod
 
 There should be a popup in the lower-right offering you to open the container. Click "Reopen in Container".
 
-<img src="https://github.com/AstarNetwork/swanky-dev-container/blob/main/images/button.png" width=200/>
+<p align="center">
+<img src="https://github.com/AstarNetwork/swanky-dev-container/blob/main/images/popup.png" width=300/>
+</p>
 
 You can also click on the green button on the lower-left to open the dev container commands menu, and select "Reopen in container" from there.
 
-![button](./images/button.png)
-![menu](./images/menu.png)
+<p align="center">
+<img src="https://github.com/AstarNetwork/swanky-dev-container/blob/main/images/button.png" width=300/>
+</p>
+<p align="center">
+<img src="https://github.com/AstarNetwork/swanky-dev-container/blob/main/images/menu.png" width=300/>
+</p>
 
-- shared folder
-- using vscode integrated terminal
+First run will take a while as it needs to build the container and install all the packages and dependencies.
+
+### Host shared folder
+
+As a part of the installation process, a folder named `swanky` will be created in your `HOME`.
+
+Use it to share files with the host OS, for example, compiled contracts for uploading and instantiating on the contracts UI.
+
+### Terminal
+
+To interact with your project (including calling `swanky` commands), use VS Code integrated terminal.
 
 ## Updating swanky version
 
