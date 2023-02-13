@@ -40,7 +40,7 @@ First run will take a while as it needs to build the container and install all t
 
 As a part of the installation process, a folder named `swanky` will be created in your `HOME`.
 
-Use it to share files with the host OS, for example, compiled contracts for uploading and instantiating on the contracts UI.
+It is mounted to `/host-home` in the container, and you can use it to share files with the host OS, for example, compiled contracts for uploading and instantiating on the contracts UI.
 
 ### Terminal
 
@@ -48,17 +48,47 @@ To interact with your project (including calling `swanky` commands), use VS Code
 
 ## Updating swanky version
 
-- until auto update is configured, dl, unzip and copy link
+Swanky is installed into `/opt/swanky`, and the main executable is linked to `/usr/local/bin/swanky`.
+
+To update the Swanky version you can use the following steps:
+
+```bash
+sudo rm -rf /opt/swanky /usr/local/bin/swanky
+wget -O /tmp/swanky.tar.gz [new_version_url]
+sudo tar -xf /tmp/swanky.tar.gz -C /opt
+sudo ln -s /opt/swanky/bin/swanky /usr/local/bin/swanky
+```
 
 ## Configure and modify the container
 
-- adding apt packages
-- adding vscode extensions
-- add features
+### Adding apt packages
+
+This dev container uses `apt-packages` feature. You can add the packages you need to the `packages` fields, and they will be installed during the container build.
+
+Note that you will have to rebuild for changes to take place.
+
+### Git credentials
+
+Only `user.name` and `user.email` are copied from the host system because those are needed for swanky-cli to operate correctly. Anything else needs to be added manually.
+
+### Adding vscode extensions
+
+Any VS code extensions you need to run during the development in the container need to be specified in the `devcontainer.json` file.
+
+To add the extensions you want, copy the identifier found in the extension details page into the `customizations.vscode.extensions` array in `devcontainer.json`
+
+### Add features
+
+Features are "modules" that can be added to the dev container to install additional software or extend the functionality.
+
+Officially supported and community maintained features can be [found here](https://containers.dev/features), but you can also build your own.
+
+To add a feature, simply copy it's reference int the `features` field.
+
+> Note: not all features are compatible, and some need to be installed in a specific order. Check the readme before adding any.
 
 ## References
 
-https://github.com/AstarNetwork/swanky-dev-container/tree/main/images/button.png
-https://github.com/AstarNetwork/swanky-dev-container/tree/main/images/menu.png
-https://github.com/AstarNetwork/swanky-dev-container/tree/main/images/popup.png
-https://github.com/AstarNetwork/swanky-dev-container/blob/main/images/button.png
+- (Dev containers manual)[https://code.visualstudio.com/docs/devcontainers/containers]
+- (Dev container specification)[https://containers.dev/]
+- (swanky-cli)[https://github.com/AstarNetwork/swanky-cli]
