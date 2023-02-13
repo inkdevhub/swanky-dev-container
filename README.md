@@ -11,7 +11,7 @@ This means you can develop your project inside a preconfigured container with al
 To run the container, you will need:
 
 - Visual Studio Code with the [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) enabled
-- Docker engine installed
+- Docker engine installed and the daemon running
 
 More detailed information on system requirements can be [found here](https://code.visualstudio.com/docs/devcontainers/containers#_system-requirements).
 
@@ -83,7 +83,7 @@ Features are "modules" that can be added to the dev container to install additio
 
 Officially supported and community maintained features can be [found here](https://containers.dev/features), but you can also build your own.
 
-To add a feature, simply copy it's reference int the `features` field.
+To add a feature, simply copy it's reference into the `features` field.
 
 > Note: not all features are compatible, and some need to be installed in a specific order. Check the readme before adding any.
 
