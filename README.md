@@ -17,7 +17,8 @@ More detailed information on system requirements can be [found here](https://cod
 
 ## Usage
 
-- fork or clone this repo (optionally rename the target dir), and open it in VS Code
+- This is a template repo, create a new repo from this template (same button as clone) or clone it
+- open the repo in VS Code
 
 There should be a popup in the lower-right offering you to open the container. Click "Reopen in Container".
 
