@@ -6,6 +6,10 @@ git_email=$(grep -oP "(?<=email:).*" /host-home/git_creds) || git_email=""
 git config --global "user.name" $git_user
 git config --global "user.email" $git_email
 
+# Fix memory leakage from aarm64 mac
+echo "[net]" > $CARGO_HOME/config.toml
+echo "git-fetch-with-cli = true" >> $CARGO_HOME/config.toml
+
 rustup default stable
 rustup update
 rustup update nightly
