@@ -19,7 +19,7 @@ rustup target add wasm32-unknown-unknown --toolchain nightly
 rustup default nightly
 
 cargo install cargo-dylint dylint-link
-cargo install --force --locked cargo-contract
+cargo install cargo-contract --force --version 1.5.1
 
 swanky_folder="/opt/swanky"
 
