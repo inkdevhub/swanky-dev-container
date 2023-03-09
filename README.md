@@ -15,6 +15,10 @@ To run the container, you will need:
 
 More detailed information on system requirements can be [found here](https://code.visualstudio.com/docs/devcontainers/containers#_system-requirements).
 
+## Software versions
+
+Swanky dev container comes with `cargo contract` v2 and `swanky-cli` v2 installed, supporting and optimized for ink! v4 and above. If you need an older version, please refer to the [environmet setup docs](https://docs.astar.network/docs/build/environment/ink_environment#ink-cli) and [`swanky-cli` update guide](#updating-swanky-version)
+
 ## Usage
 
 - This is a template repo, create a new repo from this template, or clone it
