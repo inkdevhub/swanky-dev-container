@@ -24,7 +24,7 @@ cargo install cargo-contract --force --version 2.0.1
 swanky_folder="/opt/swanky"
 
 if [ ! -d "$swanky_folder" ]; then
-  wget -O /tmp/swanky.tar.gz https://github.com/AstarNetwork/swanky-cli/releases/download/v2.0.0/swanky-v2.0.0-e891a87-linux-x64.tar.gz && sudo tar -xf /tmp/swanky.tar.gz -C /opt
+  wget -O /tmp/swanky.tar.gz https://github.com/AstarNetwork/swanky-cli/releases/download/v2.1.0/swanky-v2.1.0-0237720-linux-x64.tar.gz && sudo tar -xf /tmp/swanky.tar.gz -C /opt
 fi
 
 link_path="/usr/local/bin/swanky"
