@@ -20,11 +20,13 @@
 
   // it can probably be done in a more efficient way
   // if no other use is found for this mount, it should be removed
-  "initializeCommand": ".devcontainer/scripts/create-swanky-shared.sh ${localEnv:HOME}${localEnv:USERPROFILE}/swanky",
 
-  "mounts": [
-    "source=${localEnv:HOME}${localEnv:USERPROFILE}/swanky,target=/host-home,type=bind,consistency=cached"
-  ],
+  // Creates a `swanky` directory in host home and mounts it to the container's /host-home
+  // Uncomment if used locally, as it doesn't work in cloud environment (like cloudspaces)
+  //"initializeCommand": ".devcontainer/scripts/create-swanky-shared.sh ${localEnv:HOME}${localEnv:USERPROFILE}/swanky",
+  // "mounts": [
+  //   "source=${localEnv:HOME}${localEnv:USERPROFILE}/swanky,target=/host-home,type=bind,consistency=cached"
+  // ],
 
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
