@@ -17,7 +17,7 @@ More detailed information on system requirements can be [found here](https://cod
 
 ## Software versions
 
-Swanky dev container comes with `cargo contract` v2 and `swanky-cli` v2 installed, supporting and optimized for ink! v4 and above. If you need an older version, please refer to the [environmet setup docs](https://docs.astar.network/docs/build/environment/ink_environment#ink-cli) and [`swanky-cli` update guide](#updating-swanky-version)
+Swanky dev container comes with `cargo contract` v2 and `swanky-cli` v3 installed, supporting and optimized for ink! v4 and above. If you need an older version, please refer to the [environmet setup docs](https://docs.astar.network/docs/build/environment/ink_environment#ink-cli) and [`swanky-cli` update guide](#updating-swanky-version)
 
 ## Usage
 
@@ -39,14 +39,6 @@ You can also click on the green button on the lower-left to open the dev contain
 <img src="https://github.com/AstarNetwork/swanky-dev-container/blob/main/images/menu.png" width=300/>
 </p>
 
-First run will take a while as it needs to build the container and install all the packages and dependencies.
-
-### Host shared folder
-
-As a part of the installation process, a folder named `swanky` will be created in your `HOME`.
-
-It is mounted to `/host-home` in the container, and you can use it to share files with the host OS, for example, compiled contracts for uploading and instantiating on the contracts UI.
-
 ### Terminal
 
 To interact with your project (including calling `swanky` commands), use VS Code integrated terminal.
@@ -63,18 +55,6 @@ wget -O /tmp/swanky.tar.gz [new_version_url]
 sudo tar -xf /tmp/swanky.tar.gz -C /opt
 sudo ln -s /opt/swanky/bin/swanky /usr/local/bin/swanky
 ```
-
-## Configure and modify the container
-
-### Adding apt packages
-
-This dev container uses `apt-packages` feature. You can add the packages you need to the `packages` fields, and they will be installed during the container build.
-
-Note that you will have to rebuild for changes to take place.
-
-### Git credentials
-
-Only `user.name` and `user.email` are copied from the host system because those are needed for swanky-cli to operate correctly. Anything else needs to be added manually.
 
 ### Adding vscode extensions
 
