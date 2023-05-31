@@ -1,39 +1,17 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-  "name": "Swanky-env",
-  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-  "build": { "dockerfile": "Dockerfile" },
+  "name": "swanky-env",
+  "image": "ghcr.io/astarnetwork/swanky-cli/swanky-base:swanky3.0.1_v2.0.1",
 
   // Mount the workspace volume
-  "workspaceMount": "source=swanky-workspace-volume,target=/workspace,type=volume",
+  "mounts": [
+    "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+  ],
   "workspaceFolder": "/workspace",
 
-  // Features to add to the dev container. More info: https://containers.dev/features.
-  "features": {
-    "ghcr.io/devcontainers/features/rust:1": {},
-    "ghcr.io/devcontainers/features/node:1": {},
-    "ghcr.io/rocker-org/devcontainer-features/apt-packages:1": {
-      "packages": "binaryen,pkg-config,libssl-dev"
-    }
+  "containerEnv": {
+    "CARGO_TARGET_DIR": "/tmp"
   },
 
-  // it can probably be done in a more efficient way
-  // if no other use is found for this mount, it should be removed
-
-  // Creates a `swanky` directory in host home and mounts it to the container's /host-home
-  // Uncomment if used locally, as it doesn't work in cloud environment (like cloudspaces)
-  //"initializeCommand": ".devcontainer/scripts/create-swanky-shared.sh ${localEnv:HOME}${localEnv:USERPROFILE}/swanky",
-  // "mounts": [
-  //   "source=${localEnv:HOME}${localEnv:USERPROFILE}/swanky,target=/host-home,type=bind,consistency=cached"
-  // ],
-
-  // Use 'forwardPorts' to make a list of ports inside the container available locally.
-  // "forwardPorts": [],
-
-  // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "bash /tmp/swanky-setup.sh",
-  // "overrideCommand": true,
   // Configure tool-specific properties.
   "customizations": {
     "vscode": {
@@ -43,8 +21,7 @@
         "redhat.vscode-yaml"
       ]
     }
-  }
+  },
 
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
+  "remoteUser": "root"
 }
